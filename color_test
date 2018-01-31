@@ -1,0 +1,6 @@
+#!/bin/bash
+# Prints on the screen a lot of color codes for bash
+
+# Color test letter 256 colors & background 8bit
+for i in {0..255}; do echo -e "\033[38;5;${i}m Color Test 033[38;5;${i} \033[0m \t \033[48;5;${i}m Color Test 033[48;5;${i} \033[0m"; done
+
