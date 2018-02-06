@@ -4,7 +4,8 @@ par(mfrow=c(3,1))
 save.colmap <- function(Colmap,Dir){
   Colmap<-t(col2rgb(Colmap(256)))
   Colmap<-Colmap/256
-  write.csv(Colmap,file=Dir,row.names=FALSE,quote = FALSE) }
+#  write.csv(Colmap,file=Dir,row.names=FALSE,quote = FALSE) 
+  }
 
 # # # ############################ # # #
 #           blainkbow
@@ -70,8 +71,6 @@ plot(seq(-2,2,length.out = 256),rep(1,256),pch=15,cex=30,col=surfJetKaks(256),yl
 abline(v=c(-1,0,1))
 save.colmap(surfJetKaks,"/home/rr/git_here/oma/surfJetKaks.csv")
 
-
-par(mfrow=c(3,1))
 # # # ############################ # # #
 #           graypurp
 # # # ############################ # # #
