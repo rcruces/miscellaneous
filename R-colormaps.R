@@ -42,7 +42,7 @@ save.colmap(griblred,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/griblred
 # # # ############################ # # #
 #           blured
 # # # ############################ # # #
-blured <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue","gray85","gold","darkorange","red2","red4"))
+blured <- colorRampPalette(c("midnightblue","royalblue3","royalblue","skyblue","gray85","gray85","gold","darkorange","red2","red4"))
 plot(1:256,rep(1,256),pch=15,cex=30,col=blured(256),ylim=c(0.95,1.05),bty='n',main="blured")
 save.colmap(blured,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/blured.csv")
 
