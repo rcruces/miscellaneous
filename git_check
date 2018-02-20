@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+# GIT CHECK STATUS
+
+
+#---------------- FUNCTION: HELP ----------------#
+print_help() {
+echo "
+Uso:
+
+`git_check`
+
+NO arguments are needed for this script. This scrip will loop over each repository checking the status.
+
+
+Raúl RC
+February 2018
+"
+}
+
+#---------------- WARNINGS ----------------#
+if [ ! -d .git ]; then
+  echo -e "\e[0;31m\n[ERROR]... \tThis is not a GIT repository\n\n\e[0m"
+	print_help
+	exit 0
+fi
+
+
+# --------------------------------------------------------------- # 
+# 			CHECKING GIT STATUS
+# --------------------------------------------------------------- # 
+
+#---------------- Loop over the directories on git ----------------#
+for i in *; do
+# Check if this is a directory
+if [ -d $i ]; then 
+  cd $i
+# Check if is a git repository
+if [ ! -d .git ]; then
+  echo -e "\e[0;31m\n[ERROR]....${i} is not a GIT REPOSITORY\e[0m\n"
+  else # Print the name of the Repo with fancy color
+echo -e "\033[48;5;197m\n[INFO]....${i}\n\033[0m"
+  git status
+fi
+	cd ..
+else echo -e "\e[0;31m\n[ERROR]....${i} is not a DIRECTORY\e[0m\n"
+fi
+
+done
+
