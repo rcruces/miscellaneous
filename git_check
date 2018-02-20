@@ -40,6 +40,7 @@ if [ ! -d .git ]; then
   echo -e "\e[0;31m\n[ERROR]....${i} is not a GIT REPOSITORY\e[0m\n"
   else # Print the name of the Repo with fancy color
 echo -e "\033[48;5;197m\n[INFO]....${i}\n\033[0m"
+  git pull
   git status
 fi
 	cd ..
