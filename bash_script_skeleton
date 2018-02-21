@@ -2,7 +2,7 @@
 #
 # bash script skeleton
 
-
+Col="38;5;83m" # Color code 
 #---------------- FUNCTION: HELP ----------------#
 print_help() {
 echo "
@@ -24,11 +24,12 @@ e-mail??
 #---------------- FUNCTION: PRINT COLOR COMMAND ----------------#
 cmd() {
 text=$1
-echo -e "\033[38;5;208m \nCOMMAND --> $text \033[0m"
+echo -e "\033[38;5;208mCOMMAND --> $text \033[0m"
 echo $($text)
 }
 
-#---------------- WARNINGS ----------------#
+#------------------------------------------------------------------------------#
+# 			WARNINGS
 if [ $# -lt 1 ]
 then
 	echo -e "\e[0;31m\n[ERROR]... \tSomething is wrong\n\n\e[0m\t\targ1: $1"
@@ -37,48 +38,49 @@ then
 fi
 
 
-# --------------------------------------------------------------- # 
-# 			Starting Requirements
-# --------------------------------------------------------------- # 
- 
-#---------------- Declaring variables ----------------#
+#------------------------------------------------------------------------------# 
+#			 Declaring variables 
 myText=$1
+out=NA
 tmp=/tmp/bash_$RANDOM
 
-#---------------- Timer & Beginning ----------------#
+
+#------------------------------------------------------------------------------#
+#			 Timer & Beginning
 aloita=$(date +%s.%N)
-echo -e "\033[48;5;22m\n[INIT]... \tTHIS IS A BASH SCRIPT SKELETON\n\033[0m"
+echo -e "\033[48;5;58m\n[INIT]..... \tTHIS IS A BASH SCRIPT SKELETON\n\033[0m"
 
 
-
-#---------------- Temporal directory ----------------# 
-mkdir $tmp
-echo  -e "\033[38;5;45m\n[INFO]... tmp directory: \033[0m"
-echo   -e "\033[38;5;208mDIR -->\t $tmp\033[0m"
-
+#------------------------------------------------------------------------------#
+#			 Temporal directory
+echo  -e "\033[$Col\n[INFO]..... tmp directory: \033[0m"
+cmd "mkdir -v $tmp"
 
 
-#---------------- Timer & Beginning ----------------#
+#------------------------------------------------------------------------------#
+#			 Timer & Beginning
 aloita=$(date +%s.%N)
-echo -e "\033[48;5;22m\n[INIT]... \tThis script prints text\n\033[0m"
+echo -e "\033[$Col\n[INFO]..... This script prints text\033[0m"
 
 
-#---------------- Do whatever you want to do ----------------#
-# Reorienta al espacio estandar
+#------------------------------------------------------------------------------#
+#			 Do whatever you want to do
 cmd "echo $myText"
 
 
-
-#----------- Removes temporal directory -----------#
-echo -e "\033[38;5;45m\n[INFO]... Removing temporal files: $tmp\e[0m"
+#------------------------------------------------------------------------------#
+#			 Removes temporal directory
+echo -e "\033[$Col\n[INFO]..... Removing temporal files: $tmp\e[0m"
  rm -Rv $tmp
 
 
-#----------- Outfile -----------# JUST IN CASE, but not now
-# echo  -e "\033[38;5;45m\n[INFO]... Outfile: ${out} \033[0m"
+#------------------------------------------------------------------------------#
+#			 Outfile			JUST IN CASE, but not now
+echo  -e "\033[$Col\n[INFO]..... Outfile: ${out} \033[0m"
 
 
-#----------- Total Time -----------#
+#------------------------------------------------------------------------------#
+#			 Total Time
 lopuu=$(date +%s.%N)
 eri=$(echo "$lopuu - $aloita" | bc)
 echo -e "\\033[38;5;220m \n TOTAL running time: ${eri} seconds \n \\033[0m"
