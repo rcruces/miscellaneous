@@ -4,7 +4,7 @@
 
 Col="38;5;83m" # Color code 
 #---------------- FUNCTION: HELP ----------------#
-print_help() {
+help() {
 echo "
 Uso:
 
@@ -28,12 +28,21 @@ echo -e "\033[38;5;208mCOMMAND --> $text \033[0m"
 echo $($text)
 }
 
+Info() {
+Col="38;5;83m" # Color code 
+echo  -e "\033[$Col\n[INFO]..... $1 \033[0m"
+}
+
+Error() {
+echo -e "\e[0;31m\n[ERROR]..... $1\n\e[0m"
+}
+
 #------------------------------------------------------------------------------#
 # 			WARNINGS
 if [ $# -lt 1 ]
 then
 	echo -e "\e[0;31m\n[ERROR]... \tSomething is wrong\n\n\e[0m\t\targ1: $1"
-	print_help
+	help
 	exit 0
 fi
 
