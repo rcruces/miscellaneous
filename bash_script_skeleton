@@ -45,6 +45,8 @@ then
 	help
 	exit 0
 fi
+# Optional arguments
+if [ -z ${out+x} ]; then out=./intensities; Note "-out" " ${out}"; else Note "-out" " ${out}"; fi
 
 
 #------------------------------------------------------------------------------# 
