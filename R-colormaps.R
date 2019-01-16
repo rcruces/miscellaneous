@@ -46,6 +46,22 @@ blured <- colorRampPalette(c("midnightblue","royalblue3","royalblue","skyblue","
 plot(1:256,rep(1,256),pch=15,cex=30,col=blured(256),ylim=c(0.95,1.05),bty='n',main="blured")
 save.colmap(blured,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/blured.csv")
 
+
+# # # ############################ # # #
+#           blRd
+# # # ############################ # # #
+blRd <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue","gray65","gray65","red4","red2","orangered","darkorange","gold"))
+plot(1:256,rep(1,256),pch=15,cex=30,col=blRd(256),ylim=c(0.95,1.05),bty='n',main="BlRd")
+save.colmap(blRd,"/home/rr/git_here/oma/matlab_colormaps/blRd.csv")
+
+# # # ############################ # # #
+#      High-Contrast Cool Jet bar
+# # # ############################ # # #
+surfJetHi <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue","gray65","gray65","gray62","gray60","gray62","gray65","gray65","red4","red2","orangered","darkorange","gold"))
+plot(seq(-2,2,length.out = 256),rep(1,256),pch=15,cex=30,col=surfJetHi(256),ylim=c(0.95,1.05),bty='n',main="surfJet")
+abline(v=c(-1,0,1))
+save.colmap(surfJetHi,"/home/rr/git_here/oma/matlab_colormaps/surfJetHi.csv")
+
 # # # ############################ # # #
 #           Cool Jet bar
 # # # ############################ # # #
@@ -54,14 +70,6 @@ surfJet <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","sk
 plot(seq(-2,2,length.out = 256),rep(1,256),pch=15,cex=30,col=surfJet(256),ylim=c(0.95,1.05),bty='n',main="surfJet")
 abline(v=c(-1,0,1))
 save.colmap(surfJet,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/surfJet.csv")
-
-# # # ############################ # # #
-#      High-Contrast Cool Jet bar
-# # # ############################ # # #
-surfJetHi <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue","gray45","gray45","gray42","gray40","gray42","gray45","gray45","red4","red2","orangered","darkorange","gold"))
-plot(seq(-2,2,length.out = 256),rep(1,256),pch=15,cex=30,col=surfJetHi(256),ylim=c(0.95,1.05),bty='n',main="surfJet")
-abline(v=c(-1,0,1))
-save.colmap(surfJetHi,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/surfJetHi.csv")
 
 # # # ############################ # # #
 #           Cool Jet barKaks
