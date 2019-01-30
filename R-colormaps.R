@@ -40,18 +40,29 @@ plot(1:256,rep(1,256),pch=15,cex=30,col=griblred(256),ylim=c(0.95,1.05),bty='n',
 save.colmap(griblred,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/griblred.csv")
 
 # # # ############################ # # #
+#           BRbrew
+# # # ############################ # # #
+brew <- colorRampPalette(c("#313695","#4575B4","#74ADD1","#ABD9E9","#E0F3F8","gray65","gray65","#FFFFBF","#FEE090","#FDAE61","#F46D43","#A50026"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=brew(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="brew")
+
+brew1 <- colorRampPalette(c("midnightblue","#313695","#4575B4","#74ADD1","#ABD9E9","gray65","gray65","#FEE090","#FDAE61","#F46D43","#A50026","red4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=brew1(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="brew")
+save.colmap(brew1,"/home/rr/git_here/oma/matlab_colormaps/brew.csv")
+
+
+# # # ############################ # # #
 #           blured
 # # # ############################ # # #
-blured <- colorRampPalette(c("midnightblue","royalblue3","royalblue","skyblue","gray85","gray85","gold","darkorange","red2","red4"))
-plot(1:256,rep(1,256),pch=15,cex=30,col=blured(256),ylim=c(0.95,1.05),bty='n',main="blured")
-save.colmap(blured,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/blured.csv")
+blured <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue","gray65","gray65","gold","darkorange","orangered","red2","red4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=blured(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="blured")
+save.colmap(blured,"/home/rr/git_here/oma/matlab_colormaps/blured.csv")
 
 
 # # # ############################ # # #
 #           blRd
 # # # ############################ # # #
 blRd <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue","gray65","gray65","red4","red2","orangered","darkorange","gold"))
-plot(1:256,rep(1,256),pch=15,cex=30,col=blRd(256),ylim=c(0.95,1.05),bty='n',main="BlRd")
+plot(1:12,rep(1,12),pch=15,cex=30,col=blRd(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="BlRd")
 save.colmap(blRd,"/home/rr/git_here/oma/matlab_colormaps/blRd.csv")
 
 # # # ############################ # # #
@@ -65,11 +76,11 @@ save.colmap(surfJetHi,"/home/rr/git_here/oma/matlab_colormaps/surfJetHi.csv")
 # # # ############################ # # #
 #           Cool Jet bar
 # # # ############################ # # #
-surfJet <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue","gray90","gray90","gray95","gray95","gray95","gray90","gray90","gold","darkorange","orangered","red2","red4"))
+surfJet <- colorRampPalette(c("midnightblue","#313695","#4575B4","#74ADD1","#ABD9E9","gray65","gray65","gray67","gray70","gray67","gray65","gray65","#FEE090","#FDAE61","#F46D43","#A50026","red4"))
 #surfJet <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue","gray85","gray85","gold","darkorange","orangered","red2","red4"))
-plot(seq(-2,2,length.out = 256),rep(1,256),pch=15,cex=30,col=surfJet(256),ylim=c(0.95,1.05),bty='n',main="surfJet")
+plot(1:17,rep(1,17),pch=15,cex=30,col=surfJet(17),ylim=c(0.95,1.05),xlim=c(-1,16),bty='n',main="surfJet")
 abline(v=c(-1,0,1))
-save.colmap(surfJet,"/misc/ernst/rcruces/git_here/oma/matlab_colormaps/surfJet.csv")
+save.colmap(surfJet,"/home/rr/git_here/oma/matlab_colormaps/surfJet.csv")
 
 # # # ############################ # # #
 #           Cool Jet barKaks
