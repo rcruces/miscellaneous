@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Raúl RC
+# Created September 20, 2019
+# raul.rodriguezcruces@mcgill.ca
+#
+############################################################################
+# Sets python 3.7 as default on a given sesion
+############################################################################
+
+# Replaces the anaconda2 for anaconda3
+export PATH=$(echo "$PATH" | sed "s/anaconda2/anaconda3/")
+
+# Replaces the necesary env variables to call python3.7
+export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda3/bin/python3.7:/host/yeatman/local_raid/rcruces/anaconda3/bin"
+export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda3"
+export LD_LIBRARY_PATH="/host/yeatman/local_raid/rcruces/anaconda3/lib"
+
+# print a QC
+echo -e " \n\033[48;5;202m>>>>>>>>>> Setting python 3.7 <<<<<<<<<\033[0m\n
+  \033[38;5;197m PYTHONPATH\033[0m 		$PYTHONPATH
+  \033[38;5;197m PYTHONHOME\033[0m 		$PYTHONHOME
+  \033[38;5;197m LD_LIBRARY_PATH\033[0m 	$LD_LIBRARY_PATH
+ 
+"
