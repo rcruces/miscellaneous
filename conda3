@@ -6,15 +6,25 @@
 #
 ############################################################################
 # Sets python 3.7 as default on a given sesion
+# NOTE:
+# MUST be sourced from .profile:
+# alias py3='source /host/yeatman/local_raid/rcruces/git_here/miscellaneous/conda3'
 ############################################################################
 
 # Replaces the anaconda2 for anaconda3
-export PATH=$(echo "$PATH" | sed "s/anaconda2/anaconda3/")
+#export PATH=$(echo "$PATH" | sed "s/anaconda2/anaconda3/")
 
-# Replaces the necesary env variables to call python3.7
+# Adds the conda3 path to the env PATH variable
+export PATH=/host/yeatman/local_raid/rcruces/anaconda3/bin/:${PATH}
+
+# Creates the necesary env variables to call python3.7
 export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda3/bin/python3.7:/host/yeatman/local_raid/rcruces/anaconda3/bin"
 export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda3"
 export LD_LIBRARY_PATH="/host/yeatman/local_raid/rcruces/anaconda3/lib"
+
+# Language utilities
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # print a QC
 echo -e " \n\033[48;5;202m>>>>>>>>>> Setting python 3.7 <<<<<<<<<\033[0m\n
