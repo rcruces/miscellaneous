@@ -6,7 +6,7 @@
 print_help() {
 echo "
 Uso:    `basename $0` file
-	      
+
 This script transposes column to row or viceversa and overwrites a the file.
 Taken from here: http://stackoverflow.com/questions/1729824/transpose-a-file-in-bash
 Modified by Raúl RC
@@ -29,10 +29,10 @@ then
 fi
 
 
-# --------------------------------------------------------------- # 
+# --------------------------------------------------------------- #
 # 			Starting Requirements
-# --------------------------------------------------------------- # 
- 
+# --------------------------------------------------------------- #
+
 #---------------- Declaring variables ----------------#
 myText=$1
 tmp=/tmp/transpose_$RANDOM
@@ -40,14 +40,14 @@ tmp_txt=${tmp}/transpose.txt
 
 #---------------- Timer & Beginning ----------------#
 aloita=$(date +%s.%N)
-echo -e "\033[48;5;22m\n[INIT]... \tTransposing Column-Row from $myText\n\033[0m"
+#echo -e "\033[48;5;22m\n[INIT]... \tTransposing Column-Row from $myText\n\033[0m"
 
 
 
-#---------------- Temporal directory ----------------# 
+#---------------- Temporal directory ----------------#
 mkdir $tmp
-echo  -e "\033[38;5;45m\n[INFO]... tmp directory: \033[0m"
-echo   -e "\033[38;5;208mDIR -->\t $tmp\033[0m"
+#echo  -e "\033[38;5;45m\n[INFO]... tmp directory: \033[0m"
+#echo   -e "\033[38;5;208mDIR -->\t $tmp\033[0m"
 
 
 
@@ -71,22 +71,20 @@ for (( ROW = 0; ROW < COLS; ROW++ )); do
   for (( COUNTER = ROW; COUNTER < ${#array[@]}; COUNTER += COLS )); do
     printf "%s\t" ${array[$COUNTER]}
   done
-  printf "\n" 
+  printf "\n"
 done
 }
 
 
 #----------- Apply the transpose fucntion to the file and overwrites it -----------#
-transp $myText > ${tmp_txt} 
+transp $myText > ${tmp_txt}
 mv -v ${tmp_txt} $myText
 
-
 #----------- Removes temporal directory -----------#
-echo -e "\033[38;5;45m\n[INFO]... Removing temporal files: $tmp\e[0m"
+#echo -e "\033[38;5;45m\n[INFO]... Removing temporal files: $tmp\e[0m"
  rm -Rv $tmp
 
-
 #----------- Outfile -----------#
-echo  -e "\033[38;5;45m\n[INFO]... Outfile: ${myText} \033[0m"
+#echo  -e "\033[38;5;45m\n[INFO]... Outfile: ${myText} \033[0m"
 Nrow=`cat $myText | wc -l`
 echo -e "Number of rows: $Nrow\n"
