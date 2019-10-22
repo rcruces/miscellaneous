@@ -24,17 +24,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # print a QC
-echo -e " \n\033[48;5;202m>>>>>>>>>> Setting python 2.7 <<<<<<<<<\033[0m\n
-  \033[38;5;197m PYTHONPATH\033[0m              $PYTHONPATH
-  \033[38;5;197m PYTHONHOME\033[0m              $PYTHONHOME
-  \033[38;5;197m LD_LIBRARY_PATH\033[0m         $LD_LIBRARY_PATH
- 
+echo -e "\n\033[38;5;69m-------------------------------------------------------------
+        Setting \033[38;5;7m \033[48;5;4m python 2.7 \033[0m \033[38;5;69m version
+\033[38;5;141m PYTHONPATH\033[38;5;69m      = ${PYTHONPATH}\033[0m
+\033[38;5;141m PYTHONHOME\033[38;5;69m      = ${PYTHONHOME}\033[0m
+\033[38;5;141m LD_LIBRARY_PATH\033[38;5;69m = ${LD_LIBRARY_PATH}\033[0m
+\033[38;5;69m-------------------------------------------------------------\033[0m\n
 "
-
-
-
-
-
-
-
-
