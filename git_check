@@ -19,21 +19,21 @@ February 2018
 }
 
 #---------------- WARNINGS ----------------#
-if [ ! -d .git ]; then
-  echo -e "\e[0;31m\n[ERROR]... \tThis is not a GIT repository\n\n\e[0m"
-	print_help
-	exit 0
-fi
+#if [ ! -d .git ]; then
+#  echo -e "\e[0;31m\n[ERROR]... \tThis is not a GIT repository\n\n\e[0m"
+#	print_help
+#	exit 0
+#fi
 
 
-# --------------------------------------------------------------- # 
+# --------------------------------------------------------------- #
 # 			CHECKING GIT STATUS
-# --------------------------------------------------------------- # 
+# --------------------------------------------------------------- #
 
 #---------------- Loop over the directories on git ----------------#
 for i in *; do
 # Check if this is a directory
-if [ -d $i ]; then 
+if [ -d $i ]; then
   cd $i
 # Check if is a git repository
 if [ ! -d .git ]; then
@@ -48,4 +48,3 @@ else echo -e "\e[0;31m\n[ERROR]....${i} is not a DIRECTORY\e[0m\n"
 fi
 
 done
-
