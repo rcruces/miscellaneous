@@ -20,7 +20,7 @@ export PATH=/host/yeatman/local_raid/rcruces/anaconda3/bin/:${PATH}
 # Creates the necesary env variables to call python3.7
 export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda3/bin/python3.7:/host/yeatman/local_raid/rcruces/anaconda3/bin"
 export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda3"
-export LD_LIBRARY_PATH="/host/yeatman/local_raid/rcruces/anaconda3/lib"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/host/yeatman/local_raid/rcruces/anaconda3/lib"
 
 # Language utilities
 export LC_ALL=en_US.UTF-8
@@ -31,6 +31,8 @@ echo -e "\n\033[38;5;69m--------------------------------------------------------
         Setting \033[38;5;7m \033[48;5;4m python 3.7 \033[0m \033[38;5;69m version
 \033[38;5;141m PYTHONPATH\033[38;5;69m      = ${PYTHONPATH}\033[0m
 \033[38;5;141m PYTHONHOME\033[38;5;69m      = ${PYTHONHOME}\033[0m
+\033[38;5;141m LC_ALL\033[38;5;69m		 = ${LC_ALL}\033[0m
+\033[38;5;141m LANG\033[38;5;69m		 = ${LANG}\033[0m
 \033[38;5;141m LD_LIBRARY_PATH\033[38;5;69m = ${LD_LIBRARY_PATH}\033[0m
 \033[38;5;69m-------------------------------------------------------------\033[0m\n
 "

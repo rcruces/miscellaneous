@@ -5,27 +5,29 @@
 # raul.rodriguezcruces@mcgill.ca
 #
 ############################################################################
-# Sets python 2.7 as default on a given sesion
+# Unsets ANY python version
 # NOTE:
 # MUST be sourced from .profile:
-# alias py2='source /host/yeatman/local_raid/rcruces/git_here/miscellaneous/conda2'
+# alias pyu='source /host/yeatman/local_raid/rcruces/git_here/miscellaneous/conda-unset'
 ############################################################################
 
-# Adds the conda2 path to the env PATH variable
-export PATH=/host/yeatman/local_raid/rcruces/anaconda2/bin/:${PATH}
+# REMOVES the conda from the PATH  and LD_LIBRARY_PATH variable
+PATH=$(IFS=':';p=($PATH);unset IFS;p=(${p[@]%%*anaconda*});IFS=':';echo "${p[*]}";unset IFS)
+export PATH
 
 # Creates the necesary env variables to call python2.7
-export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda2/bin/python2.7:/host/yeatman/local_raid/rcruces/anaconda2/bin"
-export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda2"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/host/yeatman/local_raid/rcruces/anaconda2/lib"
+unset PYTHONPATH
+unset PYTHONHOME
+LD_LIBRARY_PATH=$(IFS=':';p=($LD_LIBRARY_PATH);unset IFS;p=(${p[@]%%*anaconda*});IFS=':';echo "${p[*]}";unset IFS)
+export LD_LIBRARY_PATH
 
 # Language utilities
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+unset LC_ALL
+unset LANG
 
 # print a QC
 echo -e "\n\033[38;5;69m-------------------------------------------------------------
-        Setting \033[38;5;7m \033[48;5;4m python 2.7 \033[0m \033[38;5;69m version
+        UNSET \033[38;5;7m \033[48;5;4m python \033[0m \033[38;5;69m version
 \033[38;5;141m PYTHONPATH\033[38;5;69m      = ${PYTHONPATH}\033[0m
 \033[38;5;141m PYTHONHOME\033[38;5;69m      = ${PYTHONHOME}\033[0m
 \033[38;5;141m LC_ALL\033[38;5;69m		 = ${LC_ALL}\033[0m
