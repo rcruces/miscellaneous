@@ -1,0 +1,161 @@
+---
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R-colormaps for matlab
+# Custom  
+```{r print, echo=FALSE, warning=FALSE,  message=FALSE}
+# Set working directory
+P <- function(Path){koti=Sys.getenv("KOTI"); return(paste0(koti,Path))}
+setwd(P("git_here/miscellaneous/"))
+mid.gray<-"gray65"
+
+par(mfrow=c(2,1))
+# # # ############################ # # #
+#           blainkbow
+# # # ############################ # # #
+blainkbow <- colorRampPalette(c("gray85","darkblue","midnightblue","navy","royalblue3","royalblue","skyblue3","skyblue","lightskyblue1","forestgreen","chartreuse4","olivedrab4","gold2","darkorange","red","red3"))
+plot(seq(-1,1,length.out = 256),rep(1,256),pch=15,cex=30,col=blainkbow(256),ylim=c(0.95,1.05),bty='n',main="blainkbow")
+abline(v=c(-0.5,0,0.5))
+
+# # # ############################ # # #
+#           blainkbow2
+# # # ############################ # # #
+blainkbow2 <- colorRampPalette(c("white","lightskyblue1","skyblue","skyblue3","royalblue2","forestgreen","chartreuse4","gold2","darkorange","red","red3"))
+plot(seq(-1,1,length.out = 256),rep(1,256),pch=15,cex=30,col=blainkbow2(256),ylim=c(0.95,1.05),bty='n',main="blainkbow2")
+abline(v=c(-0.5,0,0.5))
+
+# # # ############################ # # #
+#           grayula
+# # # ############################ # # #
+grayula <- colorRampPalette(c("gray90","royalblue","navy","royalblue4","darkgreen","forestgreen","olivedrab3","olivedrab2","gold2"))
+plot(seq(0,3,length.out = 256),rep(1,256),pch=15,cex=30,col=grayula(256),ylim=c(0.95,1.05),bty='n',main="grayula")
+abline(v=c(0.5,1,2,2.5))
+abline(v=c(0.75,1.5,2.25),lwd=4)
+
+# # # ############################ # # #
+#           griblred
+# # # ############################ # # #
+griblred <- colorRampPalette(c("white","midnightblue","royalblue3","royalblue","skyblue","mediumaquamarine","gold","darkorange","red2","red4"))
+plot(seq(-1,1,length.out = 256),rep(1,256),pch=15,cex=30,col=blainkbow(256),ylim=c(0.95,1.05),bty='n',main="griblred")
+abline(v=seq(-1,1,0.5))
+
+# # # ############################ # # #
+#           BRbrew
+# # # ############################ # # #
+brew <- colorRampPalette(c("#313695","#4575B4","#74ADD1","#ABD9E9","#E0F3F8",mid.gray,mid.gray,"#FFFFBF","#FEE090","#FDAE61","#F46D43","#A50026"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=brew(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="brew")
+
+brew1 <- colorRampPalette(c("midnightblue","#313695","#4575B4","#74ADD1","#ABD9E9",mid.gray,mid.gray,"#FEE090","#FDAE61","#F46D43","#A50026","red4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=brew1(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="brew1")
+
+# # # ############################ # # #
+#           blured
+# # # ############################ # # #
+blured <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue",mid.gray,mid.gray,"gold","darkorange","orangered","red2","red4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=blured(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="blured")
+
+# # # ############################ # # #
+#           blRd
+# # # ############################ # # #
+blRd <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue",mid.gray,mid.gray,"red4","red2","orangered","darkorange","gold"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=blRd(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="BlRd")
+
+# # # ############################ # # #
+#      High-Contrast Cool Jet bar
+# # # ############################ # # #
+surfJetHi <- colorRampPalette(c("skyblue","royalblue","royalblue3","navy","midnightblue",mid.gray,mid.gray,"gray62","gray60","gray62",mid.gray,mid.gray,"red4","red2","orangered","darkorange","gold"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=surfJetHi(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="surfJetHi")
+
+# # # ############################ # # #
+#           Cool Jet bar
+# # # ############################ # # #
+surfJet <- colorRampPalette(c("midnightblue","#313695","#4575B4","#74ADD1","#ABD9E9",mid.gray,mid.gray,"gray67","gray70","gray67",mid.gray,mid.gray,"#FEE090","#FDAE61","#F46D43","#A50026","red4"))
+#surfJet <- colorRampPalette(c("midnightblue","navy","royalblue3","royalblue","skyblue","gray85","gray85","gold","darkorange","orangered","red2","red4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=surfJet(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="surfJet")
+
+# # # ############################ # # #
+#           Cool Jet barKaks
+# # # ############################ # # #
+surfJetKaks <- colorRampPalette(c("blue","royalblue3","dodgerblue2","deepskyblue","skyblue","gray90","gray90","gray95","gray95","gray95","gray95","gray90","gray90","gold","orangered","firebrick4"))
+plot(1:12,rep(1,12),pch=15,cex=30,col=surfJetKaks(12),ylim=c(0.95,1.05),xlim=c(-1,11),bty='n',main="surfJetKaks")
+abline(v=c(-1,0,1))
+
+# # # ############################ # # #
+#           graypurp
+# # # ############################ # # #
+#graypurp<-colorRampPalette(c("gray85","slategray2","royalblue1","royalblue2","royalblue3","royalblue4","slateblue4","purple4","mediumpurple3"))
+graypurp<-colorRampPalette(c(mid.gray,"navy","royalblue3","royalblue1","mediumpurple2","mediumpurple3","purple4"))
+plot(1:256,rep(1,256),pch=15,cex=30,col=graypurp(256),ylim=c(0.95,1.05),bty='n',main="graypurp")
+
+# # # ############################ # # #
+#           Gray to Blue
+# # # ############################ # # #
+grayblue<-colorRampPalette(c(mid.gray,"slategray2","skyblue","skyblue2","royalblue","royalblue3","navy","midnightblue"))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=grayblue(256),ylim=c(0.95,1.05),xlim=c(-0,2),bty='n',main="grayblue")
+
+# # # ############################ # # #
+#           Fire Red
+# # # ############################ # # #
+fireRed <- colorRampPalette(c(mid.gray,"gray60","lightgoldenrod2","gold","darkorange","orangered","red2","red4"))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=fireRed(256),ylim=c(0.95,1.05),xlim=c(-0,2),bty='n',main="fireRed")
+abline(v=c(-0.65,0.45,1.55))
+```
+
+# from R-Viridis
+```{r viridis, echo=FALSE, warning=FALSE,  message=FALSE}
+# feat. Viridis
+par(mfrow=c(2,1))
+library(viridis)
+Magma <- colorRampPalette(c(mid.gray, "gray60", magma(6, begin = 0.2)))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Magma(256),ylim=c(0.95,1.05),bty='n',main="Magma")
+abline(v=c(0,0.5,1,1.5,2))
+
+Inferno <- colorRampPalette(c(mid.gray, "gray60", inferno(6, begin = 0.2)))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Inferno(256),ylim=c(0.95,1.05),bty='n',main="Inferno")
+abline(v=c(0,0.5,1,1.5,2))
+
+Cividis <- colorRampPalette(c(mid.gray, "gray60", cividis(6)))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Cividis(256),ylim=c(0.95,1.05),bty='n',main="Cividis")
+abline(v=c(0,0.5,1,1.5,2))
+
+Viridis <- colorRampPalette(c(mid.gray, "gray60", viridis(6)))
+plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Viridis(256),ylim=c(0.95,1.05),bty='n',main="Viridis")
+abline(v=c(0,0.5,1,1.5,2))
+```
+
+
+```{r save, echo=FALSE, warning=FALSE,  message=FALSE}
+# Function for saving the colormaps
+save.colmap <- function(Colmap,Dir){
+  Rpath <- (P("git_here/miscellaneous/matlab_colormaps/"))
+  Colmap<-t(col2rgb(Colmap(256)))
+  Colmap<-Colmap/256
+  write.csv(Colmap,file=paste0(Rpath,Dir),row.names=FALSE,quote = FALSE) 
+  }
+
+# save them all!
+# save.colmap(blainkbow,"blainkbow.csv")
+# save.colmap(blainkbow2,"blainkbow2.csv")
+# save.colmap(grayula,"grayula.csv")
+# save.colmap(griblred,"griblred.csv")
+# save.colmap(brew1,"brew.csv")
+# save.colmap(blured,"blured.csv")
+# save.colmap(blRd,"blRd.csv")
+# save.colmap(surfJetHi,"surfJetHi.csv")
+# save.colmap(surfJet,"surfJet.csv")
+# save.colmap(surfJetKaks,"surfJetKaks.csv")
+# save.colmap(graypurp,"graypurp.csv")
+# save.colmap(grayblue,"grayblue.csv")
+# save.colmap(fireRed,"fireRed.csv")
+# save.colmap(Magma,"magma.csv")
+# save.colmap(Inferno,"inferno.csv")
+# save.colmap(Cividis,"cividis.csv")
+# save.colmap(Viridis,"viridis.csv")
+
+```
+
