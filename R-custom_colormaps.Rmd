@@ -112,18 +112,22 @@ abline(v=c(-0.65,0.45,1.55))
 par(mfrow=c(2,1))
 library(viridis)
 Magma <- colorRampPalette(c(mid.gray, "gray60", magma(6, begin = 0.2)))
+Magma <- colorRampPalette(magma(64, begin = 0.075, end = 0.93))
 plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Magma(256),ylim=c(0.95,1.05),bty='n',main="Magma")
 abline(v=c(0,0.5,1,1.5,2))
 
 Inferno <- colorRampPalette(c(mid.gray, "gray60", inferno(6, begin = 0.2)))
+Inferno <- inferno
 plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Inferno(256),ylim=c(0.95,1.05),bty='n',main="Inferno")
 abline(v=c(0,0.5,1,1.5,2))
 
 Cividis <- colorRampPalette(c(mid.gray, "gray60", cividis(6)))
+Cividis <- cividis
 plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Cividis(256),ylim=c(0.95,1.05),bty='n',main="Cividis")
 abline(v=c(0,0.5,1,1.5,2))
 
 Viridis <- colorRampPalette(c(mid.gray, "gray60", viridis(6)))
+Viridis <- viridis
 plot(seq(0,2,length.out = 256),rep(1,256),pch=15,cex=30,col=Viridis(256),ylim=c(0.95,1.05),bty='n',main="Viridis")
 abline(v=c(0,0.5,1,1.5,2))
 ```

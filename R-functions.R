@@ -5,7 +5,7 @@ cohenD <- function(m1,m2){
   n1 <- length(m1)-1
   n2 <- length(m2)-1
   # Mean difference
-  md<-mean(m2)-mean(m1)
+  md<-mean(m1)-mean(m2)
   # Pooled variace
   sigma<-sqrt(( n1*var(m1)+n2*var(m2) )/( n1+n2 ))
   D<-md/sigma
