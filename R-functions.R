@@ -25,7 +25,31 @@ Zscore<- function(m1,m2){
   return(Z)
 }
 
+# Normalize a vector from 0 to 1
 normalize01 <- function(Vector) {
   # Normalice function
     Vz <- (Vector+1)/2
     return(Vz)}
+
+# Scale a vector between data
+scaleBetween <- function(X,a,b) {
+  Fx <- ((b-a)*(X-min(X))/(max(X)-min(X)))+a
+  return(Fx)}
+
+# Slope calculation
+slope <- function(x1,x2,y1,y2) {
+  m <- (y2-y1)/(x2-x1)
+  return(m)
+}
+
+per.change <- function(New, Old) {
+  # Percentage Change: Divide by the Old Value
+  P <- (New-Old)/abs(Old) * 100
+  return(P)
+}
+
+per.diff <- function(New, Old) {
+  # Percentage Difference: Divide by the Average of The Two Values
+  P <- abs((New-Old)/(New+Old)/2)*100
+  return(P)
+}
