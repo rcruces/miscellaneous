@@ -53,3 +53,19 @@ per.diff <- function(New, Old) {
   P <- abs((New-Old)/(New+Old)/2)*100
   return(P)
 }
+
+# Function that optimizes the color distribution
+optim.color <- function(Data,Colors) {
+  #       Data: Is the matrix of data to plot
+  #       Colors: Vector of colors we want to use
+  # 
+  mtx <- as.matrix(Data)
+  # Following code limits the lowest and highest color to 5%, and 95% of your range, respectively
+  quantile.range <- quantile(mtx, probs = seq(0, 1, 0.01))
+  palette.breaks <- seq(quantile.range["5%"], quantile.range["95%"], 0.1)
+  # Find optimal divergent color palette (or set own)
+  color.function <- colorRampPalette(Colors)
+  color.palette  <- color.function(length(palette.breaks) - 1)
+  # Returns a list with the color map and the optimal number of color breaks
+  return(list(color.palette=as.vector(color.palette),palette.breaks=as.vector(palette.breaks)))
+}
