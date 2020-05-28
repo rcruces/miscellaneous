@@ -17,7 +17,7 @@ Usage:    `basename $0`\033[0m  \033[38;5;197m-in\033[0m <DICOMS_directory> \033
 Check output with:
 http://bids-standard.github.io/bids-validator/
 
-NOTE: This script REQUIRES dcm2niix to function:
+NOTE: This script REQUIRES dcm2niix to work:
       https://github.com/rordenlab/dcm2niix
 NOTE: you need to modify lines 132 and 133 to
       match your DICOM directories
@@ -25,7 +25,7 @@ NOTE: you need to modify lines 132 and 133 to
 
 RRC
 McGill University, MNI, MICA-lab, April 2020
-Modify May 2020
+Modified May 2020
 raul.rodriguezcrcues@mcgill.ca
 "
 }
@@ -172,6 +172,7 @@ for ((k=0; k<=$n; k++)); do
      cmd "dcm2niix -b y -o ${BIDS} -f ${id}${bids[k]} ${orig[k]}"
   fi
 done
+# move files to their corresponding directory
 cmd "mv -v $BIDS/*bold* $BIDS/func"
 cmd "mv -v $BIDS/*T1* $BIDS/anat"
 
@@ -200,9 +201,12 @@ for n in `ls *bval`; do Dir=0
   for i in `cat $n`; do if [[ "$i" == 0.00 ]] || [[ "$i" == 0 ]]; then Dir=$((Dir+1)); else Dir=$((Dir+1)); fi; done
   for j in ${n/bval/}*; do mv -v $j dwi/${j/NUM/$Dir}; done
 done
-# QC, Niftis
+
+# QC, count the number of Niftis (json) per subject
 N=`ls -R */*json | wc -l`
 echo "sub-${Subj} $N" >> ${BIDS_DIR}/participants.tsv
 
 # Go back to initial directory
 cd $here
+
+Info "Remember to validate your BIDS directory:\nhttp://bids-standard.github.io/bids-validator/"
