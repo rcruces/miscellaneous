@@ -58,7 +58,7 @@ echo -e "\033[38;5;1m\n---------------------------------------------------------
 \033[38;5;1m---------------------------------------------------------\033[0m\n"; exit 0
 fi
 # Source print functions from MICASOFT_DIR
-source $MICASOFT_DIR/pipelines/08_micaProcessing/mica_printFunctions.sh
+source $MICASOFT_DIR/pipelines/09_bids_micaProcessing/mica_printFunctions.sh
 
 #------------------------------------------------------------------------------#
 #			ARGUMENTS
