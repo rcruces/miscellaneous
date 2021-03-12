@@ -15,9 +15,9 @@
 export PATH=/host/yeatman/local_raid/rcruces/anaconda2/bin/:${PATH}
 
 # Creates the necesary env variables to call python2.7
-export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda2/bin/python2.7:/host/yeatman/local_raid/rcruces/anaconda2/bin"
-export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda2"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/host/yeatman/local_raid/rcruces/anaconda2/lib"
+#export PYTHONPATH="/host/yeatman/local_raid/rcruces/anaconda2/bin/python2.7:/host/yeatman/local_raid/rcruces/anaconda2/bin"
+#export PYTHONHOME="/host/yeatman/local_raid/rcruces/anaconda2"
+#export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/host/yeatman/local_raid/rcruces/anaconda2/lib"
 
 # Language utilities
 export LC_ALL=en_US.UTF-8
